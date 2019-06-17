@@ -8,5 +8,12 @@ aws_session_token='FQoGZXIvYXdzECUaDLDXZKboQWjlvsTjkCL7AtCgBQ9wvqEMi/jbJ4PSD8VXT
 for bucket in s3.buckets.all():
     print(bucket.name)
 
+def createNameFile(name):
+    nameFile = "names.txt"
+    f = open(f,"w")
+    file.write(name)
+    file.close()
+    uploadToAS3(f)
+
 data = open('test.jpg', 'rb')
 s3.Bucket('bucket-ishan747').put_object(Key='test.jpg', Body=data)
