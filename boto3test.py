@@ -1,19 +1,19 @@
+import os
 import boto3
+# from awskeys import keyID, secretKey, token
 
 s3 = boto3.resource('s3',
-aws_access_key_id='ASIAVCS4GBQG25PEFOF5',
-aws_secret_access_key='xXC7VfcZ8lviUhbQg2tfOzuAxjRDLRB5K+dfgq2M',
-aws_session_token='FQoGZXIvYXdzECUaDLDXZKboQWjlvsTjkCL7AtCgBQ9wvqEMi/jbJ4PSD8VXT47hQz/rPiTwuyqi9MmgoKEs5H6uj1kt4Edl+kvtb37MG0PILjed7/us6hnW8sTPydjmcOwe+sisiYoZoiJ9n3vjEhpPWxB3Tu1gR+mVSP/Q5AZ4I1I2agCFtgM+NzmViQIHR9oEHS3CPGlRXL4iLzE+fWoyUOPhu/y5hogNfvwXWPDkqZJjWrnq2qNLKveDZWBGoN3RavBvhbNsy7fndeRb9zNzcUZmjS7mM8npBqfD5NyzOd+Svx9bbrkqBnxcEO6CEDidb4kLD55gkLwb+Q6VIpcg+BJF9B062Xm+NqmI7LzYUTGrdx0Dis7D+nfdmzQplrFO86Mxg4KiQv2mO2WYaR6p70uOLIhbge5EvdCDwFvdbU8EaA2NiyDsylQug8jf2ejWEXPT5IKmGrHkJuJSIb+EJx/Tm1yCQdqb/r3ev0QoquyQw3VzuJre/BvVAY0/hVnSEWlTFSybNc2UeJ4FZjTIVCSmrDgonNif6AU=',
+aws_access_key_id='ASIAVCS4GBQG6GZINNHC',
+aws_secret_access_key='s8xHn40ztunw/80JROvdBFvbepLZ6GQgDtCB7w0B',
+aws_session_token='FQoGZXIvYXdzEDsaDAevx5sG2Wf7+REO7CL7AhgSWcUmLX9Kx0UFnTiitLkDuj0htKx/3y72i86Leyxo4w+z3jRhWdfiKIwRbuDQS1hK0wuc0TeUSfn1wf1/6pknIxpJNG/8VUwbu81VnzAhaaK2YTFJHGnTN0ve/5cQaKkDTwmltNo9pgJ3IAvdxjD/zQOtG4w22mVDU+IU6lxYrye87clgvZQpspX1/+HG6/vetnH3La5UQCERQYO+cLXK2S+Cegh3VOmqNSgBxU8gsI7KGm1PGxMJg06tEaxO7iW45eQ56ZNjriOiDD11NplF0YZbSgwHcH1zXG8yc4aNgf0oM2z8zzZ/9WRC4468UXcRanHn1f++85Vewl0qCOXjWz5XZfPPZlZXxF+7ef0oFrxZ3V7Y2DlPCkKAHRuYPF8T/b+ZX5dlj/KzfvjcD4lRA+nOdCvZPDdZJ1agiFVjq2rHQsZ5zKHTGEWk3FKUnDHwxFC4XwiXNjX5E2qjseUVavabFOQAorQ+F8zUbjYmg6FlWOASaMn+zy4oyLSk6AU=',
 )
+
 for bucket in s3.buckets.all():
     print(bucket.name)
 
-def createNameFile(name):
-    nameFile = "names.txt"
-    f = open(f,"w")
-    file.write(name)
-    file.close()
-    uploadToAS3(f)
-
-data = open('test.jpg', 'rb')
-s3.Bucket('bucket-ishan747').put_object(Key='test.jpg', Body=data)
+# def createUserNameFile(userName):
+#     userinput = input('Enter your username')
+#     namefile = open(userinput)
+#
+#
+# s3.Bucket('bucket-ishan747').put_object(Key='user_name.txt')
