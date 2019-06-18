@@ -1,5 +1,4 @@
 import os
-import botocore
 import boto3
 from awskeys import *
 
@@ -19,7 +18,7 @@ f.close()
 data = open('username.txt','rb')
 s3.Bucket('bucket-ishan747').put_object(Key='username.txt', Body=data)
 
-s3.Bucket('bucket-ishan747').download_file('username.txt', 'outputusername.txt')
+s3.Bucket('bucket-ishan747').download_file('username.txt', 's3downloadusername.txt')
 
 out = open('outputusername.txt', 'r')
 print(out.read())
