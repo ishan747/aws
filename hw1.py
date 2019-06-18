@@ -1,4 +1,3 @@
-import os
 import boto3
 from awskeys import *
 
@@ -23,5 +22,5 @@ s3.Bucket('bucket-ishan747').download_file('username.txt', 's3downloadusername.t
 output = open('s3downloadusername.txt', 'r')
 print(output.read())
 
-
 s3.Object('bucket-ishan747', 'username.txt').delete()
+
