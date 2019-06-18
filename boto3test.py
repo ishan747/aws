@@ -13,9 +13,11 @@ s3 = session.resource('s3')
 for bucket in s3.buckets.all():
     print(bucket.name)
 
-# def createUserNameFile(userName):
-#     userinput = input('Enter your username')
-#     namefile = open(userinput)
-#
-#
-# s3.Bucket('bucket-ishan747').put_object(Key='user_name.txt')
+def createUserNameFile(userName):
+    userinput = input('Enter your username ')
+    f = open('username.txt', 'w')
+    f.write(userinput)
+    f.close()
+
+
+s3.Bucket('bucket-ishan747').put_object(Key='username.txt')
