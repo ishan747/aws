@@ -20,7 +20,8 @@ s3.Bucket('bucket-ishan747').put_object(Key='username.txt', Body=data)
 
 s3.Bucket('bucket-ishan747').download_file('username.txt', 's3downloadusername.txt')
 
-out = open('outputusername.txt', 'r')
-print(out.read())
+output = open('s3downloadusername.txt', 'r')
+print(output.read())
+
 
 s3.Object('bucket-ishan747', 'username.txt').delete()
