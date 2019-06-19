@@ -9,9 +9,9 @@ aws_session_token=aws_session_token,
 
 s3 = session.resource('s3')
 
-userinput = input('Enter your username: ')
+user_input = raw_input('Enter your username: ')
 f = open('username.txt', 'w+')
-f.write(userinput)
+f.write(user_input)
 f.close()
 
 data = open('username.txt','rb')
@@ -23,4 +23,3 @@ output = open('s3downloadusername.txt', 'r')
 print(output.read())
 
 s3.Object('bucket-ishan747', 'username.txt').delete()
-
